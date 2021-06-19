@@ -82,33 +82,25 @@ Both the `Code` and `LiveCode` components take an optional `theme` property whic
 
 `monochrome`
 
+<img width="668" alt="CleanShot 2021-06-19 at 10 00 29@2x" src="https://user-images.githubusercontent.com/3387500/122649991-5b226100-d0e5-11eb-96db-29cb9a993e17.png">
+
 `polychrome`
+
+<img width="671" alt="CleanShot 2021-06-19 at 10 00 39@2x" src="https://user-images.githubusercontent.com/3387500/122650005-61184200-d0e5-11eb-8699-a369dc7d6179.png">
 
 `triadic`
 
+<img width="674" alt="CleanShot 2021-06-19 at 10 00 49@2x" src="https://user-images.githubusercontent.com/3387500/122650012-65dcf600-d0e5-11eb-9724-82129ee14c13.png">
+
 `warm`
+
+<img width="665" alt="CleanShot 2021-06-19 at 10 00 59@2x" src="https://user-images.githubusercontent.com/3387500/122650017-68d7e680-d0e5-11eb-9f06-3c1606e680af.png">
 
 `cool`
 
-You can set the theme when definining the component, or as an optional variable inside a MDX code fence.
+<img width="669" alt="CleanShot 2021-06-19 at 10 01 08@2x" src="https://user-images.githubusercontent.com/3387500/122650023-6ffef480-d0e5-11eb-9587-f179f711f231.png">
 
-This will be rendered in the `monochrome` theme (the default)
-
-````
-```jsx
-const a = 2
-```
-````
-
-This will be rendered in the `polychrome` theme
-
-````
-```jsx theme=polychrome
-const a = 2
-```
-````
-
-When using MDX, you can set the `theme` once when declaring the component.
+You can set the `theme` once when definining the component, like this.
 
 ```jsx
 import { MDXProvider } from '@mdx-js/react'
@@ -126,7 +118,25 @@ return (
 )
 ```
 
-This will then apply to all code rendered via MDX. If you specify a different theme on an individual code fence, it will override the one set on the component.
+This will then apply to all code rendered via MDX. 
+
+You can also specify a different theme on an individual code fence, which will override the one set on the component.
+
+For example, this will be rendered in the `monochrome` theme
+
+````
+```jsx theme=monochrome
+const a = 2
+```
+````
+
+And this will be rendered in the `polychrome` theme
+
+````
+```jsx theme=polychrome
+const a = 2
+```
+````
 
 ## live code options
 
