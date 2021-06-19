@@ -60,14 +60,17 @@ return (
 
 So long as you are using the `LiveCode` component, you can specify a `live` flag on a code fence in MDX and get a live code editor.
 
-````
 This will be rendered as normal code
 
+````
 ```jsx
 const a = 2
 ```
+````
 
 This will be rendered as a live code editor
+
+````
 ```jsx live
 const a = 2
 ```
@@ -89,14 +92,17 @@ Both the `Code` and `LiveCode` components take an optional `theme` property whic
 
 You can set the theme when definining the component, or as an optional variable inside a MDX code fence.
 
-````
 This will be rendered in the `monochrome` theme (the default)
 
+````
 ```jsx
 const a = 2
 ```
+````
 
 This will be rendered in the `polychrome` theme
+
+````
 ```jsx theme=polychrome
 const a = 2
 ```
