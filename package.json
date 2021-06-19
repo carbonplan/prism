@@ -15,7 +15,8 @@
   "keywords": [
     "prism",
     "theme-ui",
-    "syntax"
+    "syntax",
+    "react"
   ],
   "files": [
     "dst"
