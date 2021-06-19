@@ -5,7 +5,7 @@
 
 # carbonplan / prism
 
-**syntax highlighting components**
+**components for syntax highlighting**
 
 [![GitHub][github-badge]][github]
 [![Build Status]][actions]

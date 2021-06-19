@@ -1,7 +1,7 @@
 {
-  "name": "prism",
+  "name": "@carbonplan/prism",
   "version": "1.0.0",
-  "description": "syntax highlighting components",
+  "description": "components for syntax highlighting",
   "main": "dst/index.js",
   "module": "dst/index.esm.js",
   "scripts": {
