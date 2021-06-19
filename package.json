@@ -1,0 +1,44 @@
+{
+  "name": "prism",
+  "version": "1.0.0",
+  "description": "syntax highlighting components",
+  "main": "dst/index.js",
+  "module": "dst/index.esm.js",
+  "scripts": {
+    "build": "rimraf dst && microbundle src/index.js -o dst/index.js --no-compress --jsx React.createElement -f modern,es,cjs --jsxFragment React.Fragment",
+    "format": "prettier --write 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carbonplan/prism.git"
+  },
+  "keywords": [
+    "prism",
+    "theme-ui",
+    "syntax"
+  ],
+  "files": [
+    "dst"
+  ],
+  "author": "freeman-lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carbonplan/prism/issues"
+  },
+  "homepage": "https://github.com/carbonplan/prism#readme",
+  "dependencies": {
+    "@theme-ui/color": "^0.8.4",
+    "prism-react-renderer": "^1.2.1",
+    "react-live": "^2.2.3"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0 || ^17.0.2",
+    "react-dom": "^16.14.0 || ^17.0.2",
+    "theme-ui": "^0.8.4"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0",
+    "prettier": "^2.2.1",
+    "rimraf": "2.6.3"
+  }
+}
