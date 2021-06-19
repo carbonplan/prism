@@ -36,7 +36,10 @@ export const themes = {
     '.atrule,.keyword,.attr-name,.selector,.boolean': {
       color: 'primary',
     },
-    '.function,.deleted,.punctuation': {
+    '.function,.deleted,.decorator': {
+      color: 'teal',
+    },
+    '.tag.punctuation': {
       color: 'teal',
     },
     '.function-variable': {
@@ -66,7 +69,10 @@ export const themes = {
     '.atrule,.keyword,.attr-name,.selector,.boolean': {
       color: 'primary',
     },
-    '.function,.deleted,.punctuation': {
+    '.function,.deleted,.decorator': {
+      color: 'orange',
+    },
+    '.tag.punctuation': {
       color: 'orange',
     },
     '.function-variable': {
@@ -96,7 +102,10 @@ export const themes = {
     '.atrule,.keyword,.attr-name,.selector,.boolean': {
       color: 'primary',
     },
-    '.function,.deleted,.punctuation': {
+    '.function,.deleted,.decorator': {
+      color: 'purple',
+    },
+    '.tag.punctuation': {
       color: 'purple',
     },
     '.function-variable': {
@@ -116,7 +125,7 @@ export const themes = {
     '.string,.attr-value': {
       color: 'green',
     },
-    '.punctuation,.operator': {
+    '.operator,.punctuation': {
       color: 'primary',
     },
     '.entity,.url,.symbol,.number,.variable,.constant,.property,.regex,.inserted,.class-name':
@@ -126,7 +135,10 @@ export const themes = {
     '.atrule,.keyword,.attr-name,.selector,.boolean': {
       color: 'orange',
     },
-    '.function,.deleted,.punctuation': {
+    '.function,.deleted,.decorator': {
+      color: 'teal',
+    },
+    '.tag.punctuation': {
       color: 'teal',
     },
     '.function-variable': {
