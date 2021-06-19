@@ -28,15 +28,17 @@ See these components demoed at [design.carbonplan.org](https://design.carbonplan
 To use as a standalone component, just provide the language and pass the code as children.
 
 ```jsx
-import { Code, Live } from '@carbonplan/prism'
+import { Code, LiveCode } from '@carbonplan/prism'
 
 export const Index = () => {
   return <>
   	<Code language='python'>a = 2</Code>
-  	<LiveCode language='jsx'>let a = 2</Code>
+  	<LiveCode language='jsx' live>let a = 2</Code>
   </>
 }
 ```
+
+When using the `LiveCode` component you must specify the `live` flag to include the live editor. Otherwise it will render using the basic `Code` component as a fallback. We require setting the flag so that you can use the `LiveCode` component with MDX for a mix of both live and static code.
 
 ## usage with MDX
 
