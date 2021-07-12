@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from 'theme-ui'
+import { useThemeUI, Box } from 'theme-ui'
 import { alpha } from '@theme-ui/color'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { stripTrailingNewline, parseLanguage } from './utils'
@@ -17,6 +17,10 @@ const LiveCode = ({
 }) => {
   const code = stripTrailingNewline(children)
   language = language ? language : parseLanguage(className)
+
+  const {
+    theme: { fonts },
+  } = useThemeUI()
 
   if (live) {
     return (
@@ -65,6 +69,9 @@ const LiveCode = ({
             sx={{
               ...themes[theme],
               padding: [0, 0, 0, 0],
+              '#editor': {
+                fontFamily: 'mono',
+              },
               '#editor > textarea': {
                 '&:focus-visible': {
                   outline: 'none',
@@ -105,7 +112,11 @@ const LiveCode = ({
               },
             }}
           >
-            <LiveEditor id='editor' textareaId='text-area' />
+            <LiveEditor
+              style={{ fontFamily: fonts['mono'] }}
+              id='editor'
+              textareaId='text-area'
+            />
           </Box>
         </Box>
       </LiveProvider>
