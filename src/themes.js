@@ -82,6 +82,39 @@ export const themes = {
       color: 'red',
     },
   },
+  sunrise: {
+    '.comment,.prolog,.doctype,.cdata': {
+      color: 'secondary',
+    },
+    '.namespace': {
+      opacity: 0.7,
+    },
+    '.string,.attr-value': {
+      color: 'pink',
+    },
+    '.punctuation,.operator': {
+      color: 'primary',
+    },
+    '.entity,.url,.symbol,.number,.variable,.constant,.property,.regex,.inserted,.class-name':
+      {
+        color: 'pink',
+      },
+    '.atrule,.keyword,.attr-name,.selector,.boolean': {
+      color: 'primary',
+    },
+    '.function,.deleted,.decorator': {
+      color: 'orange',
+    },
+    '.tag.punctuation': {
+      color: 'orange',
+    },
+    '.function-variable': {
+      color: 'orange',
+    },
+    '.keyword': {
+      color: 'red',
+    },
+  },
   cool: {
     '.comment,.prolog,.doctype,.cdata': {
       color: 'secondary',
