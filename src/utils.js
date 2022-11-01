@@ -1,7 +1,7 @@
 export const stripTrailingNewline = (str) => {
-  str = str.trim()
-  if (typeof str === 'string' && str[str.length - 1] === '\n') {
-    return str.slice(0, -1)
+  if (typeof str === 'string') {
+    // Trimming string will remove trailing new lines
+    return str.trim()
   }
   return str
 }
