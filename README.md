@@ -54,11 +54,7 @@ const components = {
   pre: LiveCode,
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
 So long as you are using the `LiveCode` component, you can specify a `live` flag on a code fence in MDX and get a live code editor.
@@ -110,17 +106,13 @@ import { MDXProvider } from '@mdx-js/react'
 import { Code } from '@carbonplan/prism'
 
 const components = {
-  pre: ({ ...props }) => <Code theme='polychrome' {...props}/>,
+  pre: ({ ...props }) => <Code theme='polychrome' {...props} />,
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
-This will then apply to all code rendered via MDX. 
+This will then apply to all code rendered via MDX.
 
 You can also specify a different theme on an individual code fence, which will override the one set on the component.
 
@@ -142,7 +134,7 @@ const a = 2
 
 ## live code options
 
-The `LiveCode` component also takes optional `scope` and `transform` properties. The `scope` specifies the variables you want to be available in the scope of the code editor, and the `transform` is a function to apply to code before execution. 
+The `LiveCode` component also takes optional `scope` and `transform` properties. The `scope` specifies the variables you want to be available in the scope of the code editor, and the `transform` is a function to apply to code before execution.
 
 As an example, the following ensures that all code is interpreted as a React fragment unless it is a function, and adds `useState` to the scope. Note that we set these properties while defining the component passed to the `MDXProvider`.
 
@@ -164,14 +156,12 @@ const scope = {
 }
 
 const components = {
-  pre: ({...props}) => <LiveCode transform={transform} scope={scope} {...props}/>,
+  pre: ({ ...props }) => (
+    <LiveCode transform={transform} scope={scope} {...props} />
+  ),
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
 ## development
