@@ -42,22 +42,19 @@ When using the `LiveCode` component you must specify the `live` flag to include 
 
 ## usage with MDX
 
-Import the component(s) you want and pass to an `MDXProvider`.
+In order to use markdown meta props like `live` and `theme` discussed below, note that you will need to use [`remark-mdx-code-meta`]O(https://github.com/remcohaszing/remark-mdx-code-meta) or [another solution for syntax highlighting with the meta field](https://mdxjs.com/guides/syntax-highlighting/#syntax-highlighting-with-the-meta-field).
+
+Once enabled, import the component(s) you want and pass to an `MDXProvider`.
 
 ```jsx
 import { MDXProvider } from '@mdx-js/react'
-import { LiveCode, Pre } from '@carbonplan/prism'
+import { LiveCode } from '@carbonplan/prism'
 
 const components = {
-  code: LiveCode,
-  pre: Pre,
+  pre: LiveCode,
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
 So long as you are using the `LiveCode` component, you can specify a `live` flag on a code fence in MDX and get a live code editor.
@@ -102,25 +99,20 @@ Both the `Code` and `LiveCode` components take an optional `theme` property whic
 
 <img width="669" alt="CleanShot 2021-06-19 at 10 01 08@2x" src="https://user-images.githubusercontent.com/3387500/122650023-6ffef480-d0e5-11eb-9587-f179f711f231.png">
 
-You can set the `theme` once when definining the component, like this.
+You can set the `theme` once when defining the component, like this.
 
 ```jsx
 import { MDXProvider } from '@mdx-js/react'
-import { Code, Pre } from '@carbonplan/prism'
+import { Code } from '@carbonplan/prism'
 
 const components = {
-  code: ({ ...props }) => <Code theme='polychrome' {...props}/>,
-  pre: Pre,
+  pre: ({ ...props }) => <Code theme='polychrome' {...props} />,
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
-This will then apply to all code rendered via MDX. 
+This will then apply to all code rendered via MDX.
 
 You can also specify a different theme on an individual code fence, which will override the one set on the component.
 
@@ -142,14 +134,14 @@ const a = 2
 
 ## live code options
 
-The `LiveCode` component also takes optional `scope` and `transform` properties. The `scope` specifies the variables you want to be available in the scope of the code editor, and the `transform` is a function to apply to code before execution. 
+The `LiveCode` component also takes optional `scope` and `transform` properties. The `scope` specifies the variables you want to be available in the scope of the code editor, and the `transform` is a function to apply to code before execution.
 
 As an example, the following ensures that all code is interpreted as a React fragment unless it is a function, and adds `useState` to the scope. Note that we set these properties while defining the component passed to the `MDXProvider`.
 
 ```jsx
 import { useState } from 'react'
 import { MDXProvider } from '@mdx-js/react'
-import { LiveCode, Pre } from '@carbonplan/prism'
+import { LiveCode } from '@carbonplan/prism'
 
 const transform = (src) => {
   if (!src.startsWith('()')) {
@@ -164,15 +156,12 @@ const scope = {
 }
 
 const components = {
-  code: ({...props}) => <LiveCode transform={transform} scope={scope} {...props}/>,
-  pre: Pre,
+  pre: ({ ...props }) => (
+    <LiveCode transform={transform} scope={scope} {...props} />
+  ),
 }
 
-return (
-  <MDXProvider components={components}>
-    ...
-  </MDXProvider>
-)
+return <MDXProvider components={components}>...</MDXProvider>
 ```
 
 ## development

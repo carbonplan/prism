@@ -11,12 +11,14 @@ const LiveCode = ({
   transform,
   children,
   language,
-  className,
   live = false,
   theme = 'monochrome',
 }) => {
-  const code = stripTrailingNewline(children)
-  language = language ? language : parseLanguage(className)
+  const content =
+    typeof children === 'string' ? children : children?.props?.children
+  const code = stripTrailingNewline(content)
+
+  const parsedLanguage = language ?? parseLanguage(children?.props?.className)
 
   const {
     theme: { fonts },
@@ -123,7 +125,7 @@ const LiveCode = ({
     )
   }
 
-  return <Highlighted code={code} language={language} theme={theme} />
+  return <Highlighted code={code} language={parsedLanguage} theme={theme} />
 }
 
 export default LiveCode

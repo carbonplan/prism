@@ -1,6 +1,6 @@
 {
   "name": "@carbonplan/prism",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "components for syntax highlighting",
   "main": "dst/index.js",
   "module": "dst/index.esm.js",
@@ -29,14 +29,14 @@
   },
   "homepage": "https://github.com/carbonplan/prism#readme",
   "dependencies": {
-    "@theme-ui/color": ">=0.10.0",
+    "@theme-ui/color": ">=0.15.0",
     "prism-react-renderer": "^1.2.1",
     "react-live": "2.2.3"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.2",
-    "react-dom": "^16.14.0 || ^17.0.2",
-    "theme-ui": ">=0.10.0"
+    "react": ">=18",
+    "react-dom": ">=18",
+    "theme-ui": ">=0.15.0"
   },
   "devDependencies": {
     "microbundle": "^0.13.0",
