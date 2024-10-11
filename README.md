@@ -38,7 +38,7 @@ When using the `LiveCode` component you must specify the `live` flag to include 
 
 ## usage with MDX
 
-In order to use markdown meta props like `live` and `theme` discussed below, note that you will need to use [`remark-mdx-code-meta`]O(https://github.com/remcohaszing/remark-mdx-code-meta) or [another solution for syntax highlighting with the meta field](https://mdxjs.com/guides/syntax-highlighting/#syntax-highlighting-with-the-meta-field).
+In order to use markdown meta props like `live` and `theme` discussed below, note that you will need to use [`remark-mdx-code-meta`](https://github.com/remcohaszing/remark-mdx-code-meta) or [another solution for syntax highlighting with the meta field](https://mdxjs.com/guides/syntax-highlighting/#syntax-highlighting-with-the-meta-field).
 
 Once enabled, import the component(s) you want and pass to an `MDXProvider`.
 
